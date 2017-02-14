@@ -1,4 +1,4 @@
-var app = fuction(){
+var app = function(){
 
   var catsArray = [
   {catName: "Catzy", hobbies: "Hiding"},
@@ -10,27 +10,27 @@ var app = fuction(){
   {catName: "Dr Evil", hobbies: "Using allergies to murder humans"}
   ];
 
-  var createCat = function(){
-    var catArticle = document.createElement('article');
-    catArticle.classList.add(catName);
-    return quoteArticle;
+  var createCatUL = function(){
+    var catArticle = document.createElement('ul');
+    catArticle.classList.add('cat');
+    return catArticle;
   };
 
-  var createCatName = function(){
-    var name = document.createElement('name');
-    name.innerText = "Name: " + catName;
-    return name;
+  var createCatNameLi = function(catNames){
+    var li1 = document.createElement('li');
+    li1.innerText = "Name: " + catName;
+    return li1;
   };
 
-  var createCatHobbies = function(){
-    var hobbies = document.createElement('hobbies');
-    hobbies.innerText = "Hobbies: " + hobbies;
-    return hobbies;
+  var createCatHobbiesLi = function(hobbies){
+    var li2 = document.createElement('li');
+    li2.innerText = "Hobbies: " + hobbies;
+    return li2;
   };
 
-  var appendElements = function(catArticle, catName, hobbies){
-    catArticle.appendChild(catName);
-    catArticle.appendChild(hobbies);
+  var appendElements = function(catArticle, li1, li2){
+    catArticle.appendChild(li1);
+    catArticle.appendChild(li2);
 
     var cats = document.querySelector('#cats');
     cats.appendChild(catArticle);
@@ -39,9 +39,9 @@ var app = fuction(){
   };
 
   var addNewCat = function(catName, hobbies){
-    var catArticle = creatCatUl();
-    var createName = createName(catName);
-    var createHobbies= createHobbies(hobbies);
+    var catArticle = createCatUL();
+    var createName = createCatNameLi(catName);
+    var createHobbies= createCatHobbiesLi(hobbies);
 
     appendElements(catArticle, createName, hobbies);
   };
@@ -55,6 +55,5 @@ var app = fuction(){
   addTheCats();
 
 }
-
 
 window.onload = app;
